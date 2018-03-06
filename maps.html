@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>my map</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Alike+Angular|Asul|Concert+One|Eczar|Fruktur|Kavoon|Neuton|Space+Mono|Tillana|Work+Sans" rel="stylesheet">
+    <link href="assets/css/maps.css">
+    
+    <style>
+            /* Always set the map height explicitly to define the size of the div
+             * element that contains the map. */
+            #map {
+              height: 400px;
+              width: 400px;
+            }
+            /* Optional: Makes the sample page fill the window. */
+            html, body {
+              height: 100%;
+              margin: 0;
+              padding: 0;
+            }
+          </style>
+        </head>
+        <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">Park Finder</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li> -->
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Map</a>
+                </li>
+              </ul>
+             
+            </div>
+          </nav>
+          <main role="main" class="jumbotron">
+
+                <div class="starter-template">
+                  <h1>Park Finder</h1>
+                  <p class="lead"></p>
+                </div>
+
+                <div class="col-md-6">
+                        <div id="map2"></div>
+                        <p><button onclick="geoFindMe()">Current Location</button></p>
+                        <div id="out"></div>
+
+                <div class="col-md-6">
+                        <div id="map"></div>
+                        <p><strong>Locations of Interest.</strong><br>Contains National Parks, State Parks, Federal Preserves, and many other points of interest.<br><strong>VENTURE ON!!</strong></p>
+                        
+                </div>
+
+                <!-- <div class="col-md-6">
+                        <div id="map2"></div>
+                        <p><button onclick="geoFindMe()">Show my location</button></p>
+                        <div id="out"></div> -->
+                        <!-- <div class="row">
+                                <ul class="social">
+                                 <li class="facebook"><a href="http://facebook.com/alterowo"><i class="fa fa-facebook fa-3x"></i></a></li>
+                                 <li class="twitter"><a href="http://twitter.com/Kyokushinowa"><i class="fa fa-twitter fa-3x"></i></a></li>
+                                 <li class="pinterest"><a href="http://www.pinterest.com/beatagibalska/"><i class="fa fa-pinterest-p fa-3x"></i></a></li>
+                                 <li class="behance"><a href="https://www.behance.net/Kurnikowa"><i class="fa fa-google"></i></a></li>
+                               </ul>
+                         </div> -->
+                </div>
+              
+
+          
+              </main>
+    
+        
+          
+              <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+          
+          <script>
+              function geoFindMe() {
+  var output = document.getElementById("out");
+
+  if (!navigator.geolocation){
+    output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+    return;
+  }
+
+  function success(position) {
+    var latitude  = position.coords.latitude;
+    var longitude = position.coords.longitude;
+
+    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+
+    var img = new Image();
+    img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+
+    output.appendChild(img);
+  }
+
+  function error() {
+    output.innerHTML = "Unable to retrieve your location";
+  }
+
+  output.innerHTML = "<p>Locating…</p>";
+
+  navigator.geolocation.getCurrentPosition(success, error);
+}
+      
+            function initMap() {
+      
+              var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 3,
+                center: {lat:33.6846,lng:-117.8265}
+              });
+      
+              // Create an array of alphabetical characters used to label the markers.
+              var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnopqrstuvwxyz';
+      
+              // Add some markers to the map.
+              // Note: The code uses the JavaScript Array.prototype.map() method to
+              // create an array of markers based on a given "locations" array.
+              // The map() method here has nothing to do with the Google Maps API.
+              var markers = locations.map(function(location, i) {
+                return new google.maps.Marker({
+                  position: location,
+                  label: labels[i % labels.length]
+                });
+              });
+      
+              // Add a marker clusterer to manage the markers.
+              var markerCluster = new MarkerClusterer(map, markers,
+                  {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+            }
+            var locations = [
+              {lat: 44.427895, lng: -110.588379},
+              {lat: 40.720585, lng: -77.826965},
+              {lat: 37.317207, lng: -113.022537},
+              {lat: 37.865101, lng: -119.538330},
+              {lat: 44.429764, lng: -110.584663},
+              {lat: 38.235195, lng: -120.066483},
+              {lat: 20.701283, lng: -156.173325},
+              {lat: 34.105156, lng: -118.731316},
+              {lat: 39.187050, lng: -111.379890},
+              {lat: 27.612417, lng: -81.053383},
+              {lat: 38.873840, lng: -104.886665},
+              {lat: 34.909988, lng: -109.806793},
+              {lat: 34.765972, lng: -84.143517},
+              {lat: 47.683880, lng: -102.354126},
+              {lat: 34.765972, lng: -84.143517},
+              {lat: 32.590797, lng: -95.273666},
+              {lat: 44.358715, lng: -123.829994},
+              {lat: 36.887856, lng: -118.555145},
+              {lat: 33.558990, lng: -86.707016},
+              {lat: 44.427284, lng: -110.584389},
+              {lat: 35.130459, lng: -81.345444},
+              {lat: 46.867702, lng: -69.480286},
+              {lat: 21.363251, lng: -157.781265},
+              {lat: 25.921614, lng: -80.144402},
+              {lat: 41.876465, lng: -87.621887},
+              {lat: 45.398449, lng: -92.645126},
+              {lat: 45.043449, lng: -118.949318},
+              {lat: 44.060471, lng: -122.091736},
+              {lat: 39.814339, lng: -105.395622},
+              {lat: 39.702827, lng: -105.175636},
+              {lat: 35.593670, lng: -83.824997},
+              {lat: 39.516754, lng: -80.649948},
+              {lat: 26.988386, lng: -82.286552},
+              {lat: 28.545021, lng: -81.372856},
+              {lat: 30.262793, lng: -87.636337},
+              {lat: 40.115486, lng: -81.114090},
+              {lat: 33.976376, lng: -84.579163},
+              {lat: 38.700516, lng: -78.292694},
+              {lat: 41.339184, lng: -76.290436},
+              {lat: 37.866047, lng: -96.756935},
+              {lat: 22.079357, lng: -159.761642},
+              {lat: 34.375179, lng: -80.863495},
+              {lat: 19.788027, lng: -156.023453},
+              {lat: 47.342545, lng: -114.209747},
+              {lat: 39.319424, lng: -104.730606},
+              {lat: 40.453739, lng: -80.400864},
+              {lat: 28.673721, lng: -81.104507},
+              {lat: 38.848934, lng: -92.431839},
+              {lat: 35.768803, lng: -82.306137},
+              {lat: 44.384239, lng: -120.421829},
+              {lat: 47.481018, lng: -121.956482},
+              {lat: 30.221411, lng: -95.489990},
+              {lat: 22.917923, lng: -81.210938},
+              {lat: 35.611763, lng: -83.489548},
+              {lat: 33.833378, lng: -111.417358},
+              {lat: 41.212631, lng: -106.290237},
+              {lat: 31.526020, lng: -96.385376},
+              {lat: 34.648460, lng: -83.802681},
+              {lat: 35.484863, lng: -80.288391},
+              {lat: 37.546444, lng: -91.289101},
+              {lat: 39.879204, lng: -106.016998},
+              {lat: 34.237221, lng: -87.334442},
+              {lat: 37.981483, lng: -91.550385},
+              {lat: 25.286615, lng: -80.898651},
+              
+              {lat: 41.8862,   lng: -123.0826},
+              {lat: 41.5002, lng: -121.0014},
+              {lat: 40.903016, lng: -123.156798},
+              {lat: 40.6228, lng: -121.3959},
+              {lat: 39.6030, lng: -122.8275},
+              {lat: 39.7893, lng: -120.9876},
+              {lat: 39.2692, lng: -120.0468},
+              {lat: 38.7949, lng: -120.3055},
+              {lat: 38.4419, lng: -122.5354},
+              {lat: 38.4246, lng: -122.6162},
+              {lat: 38.7525, lng: -121.6454},
+              {lat: 36.2429, lng: -121.7767},
+              {lat: 36.4906, lng: -121.1825},
+              {lat: 36.5641, lng: -121.8690},
+              {lat: 32.8180, lng: -117.0560},
+              {lat: 36.5374, lng: -121.9279},
+              {lat: 36.5725, lng: -121.9486},
+              {lat: 36.5159, lng: -121.9423},
+              {lat: 36.4680, lng: -121.9075},
+              {lat: 36.28840, lng: -121.8443},
+              {lat: 36.3615, lng: -121.8563},
+
+
+              {lat: 38.2353, lng: -120.0036},
+              {lat: 37.3427, lng: -119.2244},
+              {lat: 36.5323, lng: -116.9325},
+              {lat: 33.8734, lng: -115.9010},
+              {lat: 34.7420, lng: -119.6818},
+
+
+                 {lat: 33.2664, lng: -113.8585},
+              {lat: 34.5767, lng: -112.5722},
+              {lat: 33.2934, lng: -116.8111},
+              {lat: 33.1005, lng: -116.3013},
+              {lat: 34.2140, lng: -115.5207},
+
+                {lat: 32.6351, lng: -111.4007},
+              {lat: 33.1005, lng: -116.3013},
+              {lat: 32.7180, lng: -117.2549},
+              {lat: 32.7778, lng: -117.2265},
+              {lat: 32.7549, lng: -117.1979},
+             
+              
+              
+            ]
+
+        //      var forest = [
+        //       {lat: 44.384239, lng: -120.421829},
+        //       {lat: 47.481018, lng: -121.956482},
+        //       {lat: 30.221411, lng: -95.489990},
+        //       {lat: 22.917923, lng: -81.210938},
+        //       {lat: 35.611763, lng: -83.489548},
+        //       {lat: 33.833378, lng: -111.417358},
+        //       {lat: 41.212631, lng: -106.290237},
+        //       {lat: 31.526020, lng: -96.385376},
+        //       {lat: 34.648460, lng: -83.802681},
+        //       {lat: 35.484863, lng: -80.288391},
+        //       {lat: 37.546444, lng: -91.289101},
+        //       {lat: 39.879204, lng: -106.016998},
+        //       {lat: 34.237221, lng: -87.334442},
+        //       {lat: 37.981483, lng: -91.550385},
+        //       {lat: 25.286615, lng: -80.898651},
+             
+        // ]
+          </script>
+          <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+          </script>
+          <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbWC1jobb2RplvMj3MuRhr2ifQ3JzYI_k&callback=initMap">
+          </script>
+        </body>
+      </html>
