@@ -1,8 +1,10 @@
+$(document).ready(function () {
 $('[data-mobile-app-filter-menu] li').click(function () {
     $(this).siblings().removeClass('is-active');
     $(this).addClass('is-active');
   });
   
+
 //================ init map function ============
 function initMap() {
   var options = {
@@ -12,7 +14,6 @@ function initMap() {
 
   //New map
   var map = new google.maps.Map(document.getElementById('map'), options) //New map object
-
   // // Add marker ==== This can dynamically change based on user input given lat, lng
   // var marker = new google.maps.Marker({
   //   position:{lat: 37.8651, lng: -119.5383}, //Set to yosemite as a placeholder
@@ -82,3 +83,5 @@ function initMap() {
   }
 };
 
+// END of document.ready.
+})
