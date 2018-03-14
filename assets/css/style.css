@@ -1,6 +1,6 @@
 /* Background Image*/
 body {
-    background: url("/Users/alexissean/Desktop/MyParkFinder/assets/images/yosemite.jpg") 50% no-repeat;
+    background: url("../images/yosemite.jpg") 50% no-repeat;
     background-size: 113%;
     height: 98vh;
     text-align: center;

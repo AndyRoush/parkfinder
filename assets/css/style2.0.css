@@ -70,7 +70,7 @@ input {background: lightgray;
 
 /* Footer Quote*/ 
 .full-width-testimonial {
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.1)), url("/Users/alexissean/Desktop/ParkFinder/assets/images/yosemitenationalpark.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.1)), url("../images/yosemitenationalpark.jpg");
   background-position: center;
 }
 
