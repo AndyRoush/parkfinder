@@ -1,59 +1,18 @@
 // <!-- START of Javascript -->
-// $(document).ready(function () {
 
-    var markers = []
-    var thing = 'hi'
-    var parkCode = ''
-    // retrieve the JSON object for NPS
-    $("#enterbtn").on("click", function (event) {
-        event.preventDefault()
-        parkCode = $("#parkCode-input option:selected")
-        console.log(parkCode[0].value)
-        
-        // variables
-        // var queryURL = "https://developer.nps.gov/api/v1/parks?parkCode=" + parkCode + "&fields=images&api_key=BiJRAIaZNmBh3eBVfZDeONL4s34x07I2eTRCeCBf"
+var parkCode = ''
 
-        localStorage.setItem('name', parkCode[0].value)
-        // sessionStorage.setItem('name', parkCode[0].value)
-        // start of longlat ajax calls
-        // $.ajax({
-        //     url: queryURL,
-        //     method: "GET",
-        // }).then(function (response) {
-        //     // console.log(response.data)
+// on click, it retrieves the parkCode that is hard coded in the list of values for the national parks
+$("#enterbtn").on("click", function (event) {
+    event.preventDefault()
+    parkCode = $("#parkCode-input option:selected")
+    console.log(parkCode[0].value)
 
-        //     var parkDetails = $("<div class = 'parkDetails'>").appendTo("#detailsDiv")
-        //     $("<div class = 'parkDetails'>").appendTo("#detailsDiv")
+    // stores locally the value for parkcode needed to send to the next page and used for the ajax call of main.js file.
+    localStorage.setItem('name', parkCode[0].value)
 
-        //     for (var i = 0; i < response.data.length; i++) {
+    // on click, it sends the user to 2nd landing page - (index2.0.html)
+    window.location = "index2.0.html"
 
-        //         var latLong = response.data[i].latLong
-        //         var parkCode = response.data[i].parkCode
-        //         var parkName = response.data[i].fullName
-
-        //         // console.log(latLong)
-        //         markers.push(
-        //             {
-        //                 //pass any dynamic argument in the function when called. (lat lng from NPS)
-        //                 coords: latLong, //NPS API Info
-        //                 parkcode: parkCode, //NPS API info
-        //                 parkname: parkName//NPS API info
-        //             }
-
-        //         )
-
-        //     // END of for loop function   
-        //     }
-        //     // console.log(markers);
-            window.location = "index2.0.html"
-            
-        //     // END of longlat ajax calls
-        // })
-
-        // $.getScript("assets/javascript/app.js")
-        // END of click button function
-    })
-
-    
-    //END of document.ready
-// })
+    // END of click button function
+})
