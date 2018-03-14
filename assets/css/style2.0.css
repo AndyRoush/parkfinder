@@ -27,6 +27,7 @@
     color: rgba(10, 10, 10, 0.5);
     position: relative;
     margin-left: 1rem;
+    margin-right: 5px;
   }
   
   .menu-hover-lines a:first-child a {
@@ -51,16 +52,101 @@
   }
 
   /* Input Buttons */
-input {background: lightgray;
-    color: black;
-    width: 200px;
-    height: 25px;
-    text-align: center;
+
+/*Input Buttons*/
+
+.dropbtn {
+  background-color: green;
+    color: white;
+    padding: 10px;
+    width: 150px;
     border-radius: 10px;
-    margin-left: 10px;}
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
 
+.dropbtn:hover, .dropbtn:focus {
+  background-color: black;
+}
 
+.codeInput {margin-top: 20px;}
 
+value {margin-top: 20px;}
+
+#myParks {
+  border-box: box-sizing;
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  margin-left: 0px;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  width: 179px;
+}
+
+#myStates {border-box: box-sizing;
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  margin-left: 0px;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  width: 179px;}
+
+#myParks:focus {outline: 3px solid #ddd;}
+
+#myStates:focus {outline: 3px solid #ddd;}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  z-index: 1;
+  width: 365px;
+  height: 145px;
+  text-align: -webkit-left;
+  position: absolute;
+  margin-top: 0px;
+}
+
+.dropdown-content option {
+  color: black;
+  padding: 5px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown option:hover {background-color: #ddd}
+
+.show {display:block;}
+
+/*Search Button in DropDown Menu*/
+input {background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  margin-left: 0px;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  width: 179px;
+  border-radius: 10px;}
+
+  /*Enter Button*/
 #enterbtn {background: red;
     color: white;
     height: 25px;
@@ -68,9 +154,9 @@ input {background: lightgray;
     margin-left: 5px;
     margin-top: 0px;}
 
-/* Footer Quote*/ 
+/* Footer Quote-Image*/ 
 .full-width-testimonial {
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.1)), url("/Users/alexissean/Desktop/ParkFinder/assets/images/yosemitenationalpark.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.1)), url("../images/yosemitenationalpark.jpg");
   background-position: center;
 }
 

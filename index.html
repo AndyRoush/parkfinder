@@ -19,13 +19,19 @@
             
             <h1>Destination:</h1>
 
-        <div id=dropdown>
+        
        
-            <form id="parkCode">
+        <div class="dropdown">
+                
+                <button onclick="parkFunction()" class="dropbtn">National Parks</button>
+                      
+                    <div id="parkdropdown" class="dropdown-content">
+                        
+                        <input type="text" placeholder="Search Parks.." id="myParks" onkeyup="filterFunctionpark()">
 
-            <select id="parkCode-input" class="form-control">
-                <optgroup label="A">
-                 <option class=codeInput value="abli">Abraham Lincoln Birthplace National Historical Park</option>
+            
+            
+                    <option class=codeInput value="abli">Abraham Lincoln Birthplace National Historical Park</option>
                     <option class=codeInput value="acad">Acadia National Park</option>
                     <option class=codeInput value="adam">Adams National Historical Park</option>
                     <option class=codeInput value="afam">African American Civil War Memorial </option>
@@ -56,8 +62,7 @@
                     <option class=codeInput value="attr">Atchafalaya National Heritage Area</option>
                     <option class=codeInput value="auca">Augusta Canal National Heritage Area</option>
                     <option class=codeInput value="azru">Aztec Ruins National Monument</option>
-                </optgroup>
-                <optgroup label="B">
+                
                     <option class=codeInput value="badl">Badlands National Park</option>
                     <option class=codeInput value="balt">Baltimore National Heritage Area</option>
                     <option class=codeInput value="bawa">Baltimore-Washington Parkway</option>
@@ -87,8 +92,7 @@
                     <option class=codeInput value="brca">Bryce Canyon National Park</option>
                     <option class=codeInput value="buis">Buck Island Reef National Monument</option>
                     <option class=codeInput value="buff">Buffalo National River</option>
-                </optgroup>
-                <optgroup label="C">
+                
                     <option class=codeInput value="cabr">Cabrillo National Monument</option>
                     <option class=codeInput value="cali">California National Historic Trail</option>
                     <option class=codeInput value="cana">Canaveral National Seashore</option>
@@ -148,8 +152,7 @@
                     <option class=codeInput value="cure">Curecanti National Recreation Area</option>
                     <option class=codeInput value="cuva">Cuyahoga Valley National Park</option>
                     <option class=codeInput value="cech">César E. Chávez National Monument</option>
-                </optgroup>
-                <optgroup label="D">
+                
                     <option class=codeInput value="dabe">David Berger National Memorial</option>
                     <option class=codeInput value="daav">Dayton Aviation Heritage National Historical Park</option>
                     <option class=codeInput value="deso">De Soto National Memorial</option>
@@ -161,8 +164,7 @@
                     <option class=codeInput value="deto">Devils Tower National Monument</option>
                     <option class=codeInput value="dino">Dinosaur National Monument</option>
                     <option class=codeInput value="drto">Dry Tortugas National Park</option>
-                </optgroup>
-                <optgroup label="E">
+                
                     <option class=codeInput value="ebla">Ebey's Landing National Historical Reserve</option>
                     <option class=codeInput value="edal">Edgar Allan Poe National Historic Site</option>
                     <option class=codeInput value="efmo">Effigy Mounds National Monument</option>
@@ -177,8 +179,7 @@
                     <option class=codeInput value="esse">Essex National Heritage Area</option>
                     <option class=codeInput value="euon">Eugene O'Neill National Historic Site</option>
                     <option class=codeInput value="ever">Everglades National Park</option>
-                </optgroup>
-                <optgroup label="F">
+                
                     <option class=codeInput value="fati">Fallen Timbers Battlefield and Fort Miamis National Historic Site</option>
                     <option class=codeInput value="feha">Federal Hall National Memorial</option>
                     <option class=codeInput value="fiis">Fire Island National Seashore</option>
@@ -219,8 +220,7 @@
                     <option class=codeInput value="frri">Freedom Riders National Monument</option>
                     <option class=codeInput value="frwa">Freedom's Way National Heritage Area</option>
                     <option class=codeInput value="frhi">Friendship Hill National Historic Site</option>
-                </optgroup>
-                <optgroup label="G">
+                
                     <option class=codeInput value="gaar">Gates Of The Arctic National Park & Preserve</option>
                     <option class=codeInput value="jeff">Gateway Arch National Park</option>
                     <option class=codeInput value="gate">Gateway National Recreation Area</option>
@@ -255,8 +255,7 @@
                     <option class=codeInput value="guco">Guilford Courthouse National Military Park</option>
                     <option class=codeInput value="guis">Gulf Islands National Seashore</option>
                     <option class=codeInput value="guge">Gullah/Geechee Cultural Heritage Corridor</option>
-                </optgroup>
-                <optgroup label="H">
+                
                     <option class=codeInput value="hafo">Hagerman Fossil Beds National Monument</option>
                     <option class=codeInput value="hale">Haleakalā National Park</option>
                     <option class=codeInput value="hagr">Hamilton Grange National Memorial</option>
@@ -279,16 +278,14 @@
                     <option class=codeInput value="hove">Hovenweep National Monument</option>
                     <option class=codeInput value="hutr">Hubbell Trading Post National Historic Site</option>
                     <option class=codeInput value="hurv">Hudson River Valley National Heritage Area</option>
-                </optgroup>
-                <optgroup label="I">
+                
                     <option class=codeInput value="inup">Iñupiat Heritage Center </option>
                     <option class=codeInput value="iafl">Ice Age Floods National Geologic Trail</option>
                     <option class=codeInput value="iatr">Ice Age National Scenic Trail</option>
                     <option class=codeInput value="inde">Independence National Historical Park</option>
                     <option class=codeInput value="indu">Indiana Dunes National Lakeshore</option>
                     <option class=codeInput value="isro">Isle Royale National Park</option>
-                </optgroup>
-                <optgroup label="J">
+                
                     <option class=codeInput value="jaga">James A Garfield National Historic Site</option>
                     <option class=codeInput value="jela">Jean Lafitte National Historical Park and Preserve</option>
                     <option class=codeInput value="jeca">Jewel Cave National Monument</option>
@@ -301,8 +298,7 @@
                     <option class=codeInput value="jotr">Joshua Tree National Park</option>
                     <option class=codeInput value="jthg">Journey Through Hallowed Ground National Heritage Area</option>
                     <option class=codeInput value="juba">Juan Bautista de Anza National Historic Trail</option>
-                </optgroup>
-                <optgroup label="K">
+                
                     <option class=codeInput value="kala">Kalaupapa National Historical Park</option>
                     <option class=codeInput value="kaho">Kaloko-Honokōhau National Historical Park</option>
                     <option class=codeInput value="kaww">Katahdin Woods and Waters National Monument</option>
@@ -317,8 +313,7 @@
                     <option class=codeInput value="knri">Knife River Indian Villages National Historic Site</option>
                     <option class=codeInput value="kova">Kobuk Valley National Park</option>
                     <option class=codeInput value="kowa">Korean War Veterans Memorial </option>
-                </optgroup>
-                <optgroup label="L">
+                
                     <option class=codeInput value="lacl">Lake Clark National Park & Preserve</option>
                     <option class=codeInput value="lake">Lake Mead National Recreation Area</option>
                     <option class=codeInput value="lamr">Lake Meredith National Recreation Area</option>
@@ -339,8 +334,7 @@
                     <option class=codeInput value="lode">Lower Delaware National Wild and Scenic River</option>
                     <option class=codeInput value="loea">Lower East Side Tenement Museum National Historic Site</option>
                     <option class=codeInput value="lyjo">Lyndon B Johnson National Historical Park</option>
-                </optgroup>
-                <optgroup label="M">
+                
                     <option class=codeInput value="mawa">Maggie L Walker National Historic Site</option>
                     <option class=codeInput value="maac">Maine Acadian Culture </option>
                     <option class=codeInput value="maca">Mammoth Cave National Park</option>
@@ -353,6 +347,12 @@
                     <option class=codeInput value="mava">Martin Van Buren National Historic Site</option>
                     <option class=codeInput value="mamc">Mary McLeod Bethune Council House National Historic Site
                     </option>
+                    
+                    
+                    
+                    
+                    
+                    
                     <option class=codeInput value="meve">Mesa Verde National Park</option>
                     <option class=codeInput value="miin">Minidoka National Historic Site</option>
                     <option class=codeInput value="mima">Minute Man National Historical Park</option>
@@ -373,8 +373,6 @@
                     <option class=codeInput value="moru">Mount Rushmore National Memorial</option>
                     <option class=codeInput value="muwo">Muir Woods National Monument</option>
                     <option class=codeInput value="mush">Muscle Shoals National Heritage Area</option>
-                </optgroup>
-                <optgroup label="N">
                     <option class=codeInput value="natc">Natchez National Historical Park</option>
                     <option class=codeInput value="natt">Natchez Trace National Scenic Trail</option>
                     <option class=codeInput value="natr">Natchez Trace Parkway</option>
@@ -398,8 +396,6 @@
                     <option class=codeInput value="noat">Noatak National Preserve</option>
                     <option class=codeInput value="noca">North Cascades National Park</option>
                     <option class=codeInput value="noco">North Country National Scenic Trail</option>
-                </optgroup>
-                <optgroup label="O">
                     <option class=codeInput value="obed">Obed Wild & Scenic River</option>
                     <option class=codeInput value="ocmu">Ocmulgee National Monument</option>
                     <option class=codeInput value="oire">Oil Region National Heritage Area</option>
@@ -412,8 +408,6 @@
                     <option class=codeInput value="ovvi">Overmountain Victory National Historic Trail</option>
                     <option class=codeInput value="oxhi">Oxon Cove Park & Oxon Hill Farm </option>
                     <option class=codeInput value="ozar">Ozark National Scenic Riverways</option>
-                </optgroup>
-                <optgroup label="P">
                     <option class=codeInput value="pais">Padre Island National Seashore</option>
                     <option class=codeInput value="paal">Palo Alto Battlefield National Historical Park</option>
                     <option class=codeInput value="para">Parashant Grand Canyon-Parashant National Monument</option>
@@ -442,8 +436,6 @@
                     <option class=codeInput value="puho">Pu`uhonua O Hōnaunau National Historical Park</option>
                     <option class=codeInput value="puhe">Pu`ukoholā Heiau National Historic Site</option>
                     <option class=codeInput value="pull">Pullman National Monument</option>
-                </optgroup>
-                <optgroup label="R">
                     <option class=codeInput value="rabr">Rainbow Bridge National Monument</option>
                     <option class=codeInput value="reer">Reconstruction Era National Monument</option>
                     <option class=codeInput value="redw">Redwood National and State Parks</option>
@@ -457,8 +449,6 @@
                     <option class=codeInput value="roca">Roosevelt Campobello International Park</option>
                     <option class=codeInput value="rori">Rosie the Riveter WWII Home Front National Historical Park</option>
                     <option class=codeInput value="ruca">Russell Cave National Monument</option>
-                </optgroup>
-                <optgroup label="S">
                     <option class=codeInput value="sahi">Sagamore Hill National Historic Site</option>
                     <option class=codeInput value="sagu">Saguaro National Park</option>
                     <option class=codeInput value="sacr">Saint Croix Island International Historic Site</option>
@@ -494,8 +484,6 @@
                     <option class=codeInput value="stri">Stones River National Battlefield</option>
                     <option class=codeInput value="ston">Stonewall National Monument</option>
                     <option class=codeInput value="sucr">Sunset Crater Volcano National Monument</option>
-                </optgroup>
-                <optgroup label="T">
                     <option class=codeInput value="tapr">Tallgrass Prairie National Preserve</option>
                     <option class=codeInput value="tecw">Tennessee Civil War National Heritage Area</option>
                     <option class=codeInput value="thko">Thaddeus Kosciuszko National Memorial</option>
@@ -520,13 +508,9 @@
                     <option class=codeInput value="tuai">Tuskegee Airmen National Historic Site</option>
                     <option class=codeInput value="tuin">Tuskegee Institute National Historic Site</option>
                     <option class=codeInput value="tuzi">Tuzigoot National Monument</option>
-                </optgroup>
-                <optgroup label="U">
                     <option class=codeInput value="ulsg">Ulysses S Grant National Historic Site</option>
                     <option class=codeInput value="upde">Upper Delaware Scenic & Recreational River</option>
                     <option class=codeInput value="uphv">Upper Housatonic Valley National Heritage Area</option>
-                </optgroup>
-                <optgroup label="V">
                     <option class=codeInput value="vall">Valles Caldera National Preserve</option>
                     <option class=codeInput value="vafo">Valley Forge National Historical Park</option>
                     <option class=codeInput value="vama">Vanderbilt Mansion National Historic Site</option>
@@ -535,8 +519,6 @@
                     <option class=codeInput value="vicr">Virgin Islands Coral Reef National Monument</option>
                     <option class=codeInput value="viis">Virgin Islands National Park</option>
                     <option class=codeInput value="voya">Voyageurs National Park</option>
-                </optgroup>
-                <optgroup label="W">
                     <option class=codeInput value="waco">Waco Mammoth National Monument</option>
                     <option class=codeInput value="waca">Walnut Canyon National Monument</option>
                     <option class=codeInput value="wapa">War In The Pacific National Historical Park</option>
@@ -559,88 +541,89 @@
                     <option class=codeInput value="wrst">Wrangell - St Elias National Park & Preserve</option>
                     <option class=codeInput value="wrbr">Wright Brothers National Memorial</option>
                     <option class=codeInput value="wupa">Wupatki National Monument</option>
-                </optgroup>
-                <optgroup label="Y">
                     <option class=codeInput value="yell">Yellowstone National Park</option>
                     <option class=codeInput value="york">Yorktown Battlefield Part of Colonial National Historical Park</option>
                     <option class=codeInput value="yose">Yosemite National Park</option>
                     <option class=codeInput value="yuho">Yucca House National Monument</option>
                     <option class=codeInput value="yuch">Yukon - Charley Rivers National Preserve</option>
-                </optgroup>
-                <optgroup label="Z">
                     <option class=codeInput value="zion">Zion National Park</option>
-                </optgroup>
-            </select>
+                
+                    
+            </div>
+    </div>
+           
             
             <br>
             
-        </form>
-    </div>
-
+  
             <p>OR</p>
 
-    <div id=dropdown>
-       
-        <form id="stateCode">
-    
-            <select id="stateCode-input" class="form-control">
-                        <option value="AL">Alabama</option>
-                        <option value="AK">Alaska</option>
-                        <option value="AZ">Arizona</option>
-                        <option value="AR">Arkansas</option>
-                        <option value="CA">California</option>
-                        <option value="CO">Colorado</option>
-                        <option value="CT">Connecticut</option>
-                        <option value="DE">Delaware</option>
-                        <option value="DC">District Of Columbia</option>
-                        <option value="FL">Florida</option>
-                        <option value="GA">Georgia</option>
-                        <option value="HI">Hawaii</option>
-                        <option value="ID">Idaho</option>
-                        <option value="IL">Illinois</option>
-                        <option value="IN">Indiana</option>
-                        <option value="IA">Iowa</option>
-                        <option value="KS">Kansas</option>
-                        <option value="KY">Kentucky</option>
-                        <option value="LA">Louisiana</option>
-                        <option value="ME">Maine</option>
-                        <option value="MD">Maryland</option>
-                        <option value="MA">Massachusetts</option>
-                        <option value="MI">Michigan</option>
-                        <option value="MN">Minnesota</option>
-                        <option value="MS">Mississippi</option>
-                        <option value="MO">Missouri</option>
-                        <option value="MT">Montana</option>
-                        <option value="NE">Nebraska</option>
-                        <option value="NV">Nevada</option>
-                        <option value="NH">New Hampshire</option>
-                        <option value="NJ">New Jersey</option>
-                        <option value="NM">New Mexico</option>
-                        <option value="NY">New York</option>
-                        <option value="NC">North Carolina</option>
-                        <option value="ND">North Dakota</option>
-                        <option value="OH">Ohio</option>
-                        <option value="OK">Oklahoma</option>
-                        <option value="OR">Oregon</option>
-                        <option value="PA">Pennsylvania</option>
-                        <option value="RI">Rhode Island</option>
-                        <option value="SC">South Carolina</option>
-                        <option value="SD">South Dakota</option>
-                        <option value="TN">Tennessee</option>
-                        <option value="TX">Texas</option>
-                        <option value="UT">Utah</option>
-                        <option value="VT">Vermont</option>
-                        <option value="VA">Virginia</option>
-                        <option value="WA">Washington</option>
-                        <option value="WV">West Virginia</option>
-                        <option value="WI">Wisconsin</option>
-                        <option value="WY">Wyoming</option>
-                    </select>			
+    <div class="dropdown">
                 
-                <br>
+        <button onclick="stateFunction()" class="dropbtn">States</button>
+                  
+                <div id="statesdropdown" class="dropdown-content">
+                    
+                    <input type="text" placeholder="Search States.." id="myStates" onkeyup="filterFunctionstate()">
+                    
+                    
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District Of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                    
                 
-            </form>
+                  
         </div>
+            
+</div>
 
             <br>
             

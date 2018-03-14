@@ -82,3 +82,47 @@ function initMap() {
   }
 };
 
+//Function for DropDown Menu
+function parkFunction() {
+  document.getElementById("parkdropdown").classList.toggle("show");
+}
+
+function filterFunctionpark() {
+  var input, filter, ul, li, option, i;
+  input = document.getElementById("myParks");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("parkdropdown");
+  option = div.getElementsByTagName("option");
+  for (i = 0; i < option.length; i++) {
+      if (option[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+          option[i].style.display = "";
+      } else {
+          option[i].style.display = "none";
+      }
+  }
+}
+
+function stateFunction() {
+  document.getElementById("statesdropdown").classList.toggle("show");
+}
+
+function filterFunctionstate() {
+  var input, filter, ul, li, option, i;
+  input = document.getElementById("myStates");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("statesdropdown");
+  option = div.getElementsByTagName("option");
+  for (i = 0; i < option.length; i++) {
+      if (option[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+          option[i].style.display = "";
+      } else {
+          option[i].style.display = "none";
+      }
+  }
+}
+
+
+
+
+
+
