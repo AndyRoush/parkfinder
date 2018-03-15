@@ -29,8 +29,9 @@ window.onload = function () {
             // pass this object to the global variable array markers
             markers.push(
                 {
-                    lat: latLong.split(",")[0],
-                    long: latLong.split(", ")[1],
+                    // lat: latLong.split(",")[0],
+                    // long: latLong.split(", ")[1],
+                    latLong: latLong,
                     parkname: parkName //NPS API info
                 }
             )
@@ -48,13 +49,14 @@ window.onload = function () {
 //================ START of GOOGLE MAPS FUNCTION ============
 function initMap() {
   console.log(markers)
-    var myLatLong = {lat: 44.30777545, lng: -68.30063316}
-    // var myLatLong = markers[0].coords
+ 
+    // var myLatLong = {lat: 44.30777545, lng: -68.30063316}
+    var myLatLong = parseInt(markers[0])
     var options = {
         zoom: 4,
         center: { lat: 39.0997, lng: -94.5786 } //We can set this lat lng to change based on user input
     }
-
+console.log(myLatLong)
     //New map
     var map = new google.maps.Map(document.getElementById("map"), options) //New map object
     // // Add marker ==== This can dynamically change based on user input given lat, lng
@@ -78,24 +80,24 @@ function initMap() {
 
         });
         
-        // //mouseover function for info window on marker.
-        // marker.addListener('mouseover', function () {
-        //     infoWindow.open(map, marker);
-        // });
-        // marker.addListener('mouseout', function () {
-        //     infoWindow.close();
-        // });
+        //mouseover function for info window on marker.
+        marker.addListener('mouseover', function () {
+            infoWindow.open(map, marker);
+        });
+        marker.addListener('mouseout', function () {
+            infoWindow.close();
+        });
     
-        // //========= marker onClick to show info in div below. ===============
-        // marker.addListener('click', function () {
-        //     $('#info-div').html("<h1> HELLO FULVOUS!</h1>");
-        // });
+        //========= marker onClick to show info in div below. ===============
+        marker.addListener('click', function () {
+            $('#info-div').html("<h1> HELLO FULVOUS!</h1>");
+        });
     
-        //infowindow variable object. This info can change dynaically with the NPS API
+        // infowindow variable object. This info can change dynaically with the NPS API
         // var infoWindow = new google.maps.InfoWindow({
-        //     content: `<h6>Park Name: ${mark.parkname}
+        //     content: `<h6>Park Name: ${marker.parkname}
         //       <br />
-        //           Location: ${mark.location}
+        //           Location: ${marker.location}
         //           </h6>`
         // });
     
