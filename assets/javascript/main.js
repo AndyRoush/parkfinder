@@ -10,7 +10,6 @@ var markers = []
 // window.onload = function () {
 
     // WINDOWS ONLOAD VARIABLES 
-<<<<<<< HEAD
     var parkCode = localStorage.getItem('name')
     var queryURL = "https://developer.nps.gov/api/v1/parks?parkCode=" + parkCode + "&fields=images&api_key=BiJRAIaZNmBh3eBVfZDeONL4s34x07I2eTRCeCBf"
 
@@ -44,7 +43,6 @@ var markers = []
         // console.log(markers[0].coords)
         // ========= END OF RESPONSE FUNCTION ============
     })
-=======
     // var parkCode = localStorage.getItem('name')
     // var queryURL = "https://developer.nps.gov/api/v1/parks?parkCode=" + parkCode + "&fields=images&api_key=BiJRAIaZNmBh3eBVfZDeONL4s34x07I2eTRCeCBf"
 
@@ -77,7 +75,6 @@ var markers = []
     //     // console.log(markers[0].coords)
     //     // ========= END OF RESPONSE FUNCTION ============
     // })
->>>>>>> 77a5a9df0976925ab6ad9e3e9fd84d70f17b9531
 
     // ============ END OF ONLOAD FUNCTION ==============
 // }
@@ -85,14 +82,11 @@ var markers = []
 
 //================ START of GOOGLE MAPS FUNCTION ============
 function initMap() {
-<<<<<<< HEAD
   console.log(markers)
  
     // var myLatLong = {lat: 44.30777545, lng: -68.30063316}
     var myLatLong = parseInt(markers[0])
-=======
     
->>>>>>> 77a5a9df0976925ab6ad9e3e9fd84d70f17b9531
     var options = {
         zoom: 4,
         center: { lat: 39.0997, lng: -94.5786 } //We can set this lat lng to change based on user input
@@ -113,7 +107,6 @@ console.log(myLatLong)
     // this function would plot the google marks in the map based on coordinates passed from NPS.
     // function addMarker(mark) {
 
-<<<<<<< HEAD
         });
         
         //mouseover function for info window on marker.
@@ -136,7 +129,6 @@ console.log(myLatLong)
         //           Location: ${marker.location}
         //           </h6>`
         // });
-=======
         var parkCode = localStorage.getItem('name')
         var queryURL = "https://developer.nps.gov/api/v1/parks?parkCode=" + parkCode + "&fields=images&api_key=BiJRAIaZNmBh3eBVfZDeONL4s34x07I2eTRCeCBf"
     
@@ -149,7 +141,6 @@ console.log(myLatLong)
     
             // var parkDetails = $("<div class = 'parkDetails'>").appendTo("#detailsDiv")
             // $("<div class = 'parkDetails'>").appendTo("#detailsDiv")
->>>>>>> 77a5a9df0976925ab6ad9e3e9fd84d70f17b9531
     
             for (var i = 0; i < response.data.length; i++) {
     
