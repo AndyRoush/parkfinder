@@ -1,51 +1,8 @@
 // <!-- START of Javascript -->
 
-// QUESTION: I have a global variable array of markers. I want to be able to call this inside the initMap function to pull the objects inside the array. 
-
 // ============ GLOBAL VARIABLES =================
 var markers = []
 // console.log(markers)
-
-// ============ START OF ONLOAD FUNCTION ==============
-// window.onload = function () {
-
-    // WINDOWS ONLOAD VARIABLES 
-    // var parkCode = localStorage.getItem('name')
-    // var queryURL = "https://developer.nps.gov/api/v1/parks?parkCode=" + parkCode + "&fields=images&api_key=BiJRAIaZNmBh3eBVfZDeONL4s34x07I2eTRCeCBf"
-
-    // // AJAX call to retrieve NPS JSON
-    // $.ajax({
-    //     url: queryURL,
-    //     method: "GET",
-    // }).then(function (response) {
-    //     // console.log(response.data)
-
-    //     // var parkDetails = $("<div class = 'parkDetails'>").appendTo("#detailsDiv")
-    //     // $("<div class = 'parkDetails'>").appendTo("#detailsDiv")
-
-    //     for (var i = 0; i < response.data.length; i++) {
-
-    //         var latLong =  response.data[i].latLong
-    //         var parkName = response.data[i].fullName
-
-    //         // pass this object to the global variable array markers
-    //         markers.push(
-    //             {
-    //                 lat: latLong.split(",")[0],
-    //                 long: latLong.split(", ")[1],
-    //                 parkname: parkName //NPS API info
-    //             }
-    //         )
-
-    //         // =========== END of for loop function ============
-    //     } 
-    //     // console.log(markers[0].coords)
-    //     // ========= END OF RESPONSE FUNCTION ============
-    // })
-
-    // ============ END OF ONLOAD FUNCTION ==============
-// }
-
 
 //================ START of GOOGLE MAPS FUNCTION ============
 function initMap() {
@@ -59,14 +16,6 @@ function initMap() {
     var map = new google.maps.Map(document.getElementById("map"), options) //New map object
     // // Add marker ==== This can dynamically change based on user input given lat, lng
 
-    // Loop through markers. This can add all the markers for all the parks in a state
-    // for (var i = 0; i < markers.length; i++) {
-    //     //add marker
-    //     console.log('hi')
-    //     addMarker(markers[i]); //pass 
-
-    // }
-
     // this function would plot the google marks in the map based on coordinates passed from NPS.
     // function addMarker(mark) {
 
@@ -79,9 +28,6 @@ function initMap() {
             method: "GET",
         }).then(function (response) {
             // console.log(response.data)
-    
-            // var parkDetails = $("<div class = 'parkDetails'>").appendTo("#detailsDiv")
-            // $("<div class = 'parkDetails'>").appendTo("#detailsDiv")
     
             for (var i = 0; i < response.data.length; i++) {
     
@@ -164,7 +110,6 @@ function initMap() {
                     
                     }
 
-                        // $('#info-div').html("<h1> HELLO FULVOUS!</h1>");
                     });
                 
                 // variables
@@ -197,7 +142,6 @@ function initMap() {
                     console.log(url)
                     }
 
-                        // $('#info-div').html("<h1> HELLO FULVOUS!</h1>");
                     });
             
                   // ======= END OF FOR ONCLICK ADD LISTENER ========   
