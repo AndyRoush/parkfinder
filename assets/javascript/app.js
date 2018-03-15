@@ -93,10 +93,7 @@ function initMap() {
 
     //infowindow variable object. This info can change dynaically with the NPS API
     var infoWindow = new google.maps.InfoWindow({
-      content: `<h6>Park Name: ${mark.parkname}
-            <br />
-                Location: ${mark.location}
-                </h6>`
+      content: dynamicParkName
     });
   }
 };
